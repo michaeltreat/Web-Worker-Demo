@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Photo Upload</title>
+    <title>Web Workers</title>
     <link rel="stylesheet" href="../styles/index.css">
   </head>
   <body>
@@ -16,7 +16,7 @@
         <button id="color-button" style="color:blue">Now you can change it!</button>
       </div>
 
-      <p>Notice that here you can change the color of the button at the same time that the while loop is running it's code? This is because the Web Worker is running the While loop on a different thread which basically free's up our main page's thread, allowing the color changing event listener to run!</p>
+      <p>Notice that here you can change the color of the button at the same time that the while loop is running it's code? This is because the Web Worker is running the While loop on a different thread which leaves our main page's thread open, allowing the color changing event listener to run!</p>
     </main>
 
     <section>
@@ -35,13 +35,15 @@
         let counter = 1000000001
         
           while( counter-- ) {
-            if( counter % 100000000 === 0 ) console.log( `While loop is Currently at : ${counter}` ) 
+            if( counter % 100000000 === 0 ){
+              console.log( `While loop is Currently at : ${counter}` ) 
+            } 
           }
 
-        console.log( '------------ While Loop has Ended! ------------' )
+        console.log( '--------- While Loop has Ended! ---------' )
       </pre>
     
-      <p>Finally, the html file points to app.js which creates the worker. The worker then loads in the worke.js automatically.</p>
+      <p>Finally, the html file points to app.js which creates the worker. The worker then loads in the worker.js automatically.</p>
 
     </section>
     <a href="../index.html">Back to Home</a>
