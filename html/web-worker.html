@@ -16,13 +16,13 @@
         <button id="color-button" style="color:blue">Now you can change it!</button>
       </div>
 
-      <p>Notice that here you can change the color of the button at the same time that the while loop is running it's code? This is because the Web Worker is running the While loop on a different thread which basically free's up our main page's thread, and allows the color changing event listener to run!</p>
+      <p>Notice that here you can change the color of the button at the same time that the while loop is running it's code? This is because the Web Worker is running the While loop on a different thread which basically free's up our main page's thread, allowing the color changing event listener to run!</p>
     </main>
 
     <section>
       <h3>Setting up Web Workers</h3>
 
-      <p>Setting up Web Workers is fairly easy! Just call it's constructor and pass in the js file that you want it to run! Here are the two js files we use in the code on the previous pages.</p>
+      <p>Setting up Web Workers is fairly easy, just call it's constructor and pass in the js file that you want it to run! Here are the two .js files that we used in this demo:</p>
 
       <p>The "app.js" file creates a new Worker() and passes in the name of the js file that it should run:</p>
       
@@ -41,7 +41,7 @@
         console.log( '------------ While Loop has Ended! ------------' )
       </pre>
     
-      <p>The html file points to app.js which creates the worker. The worker then loads in the file automatically.</p>
+      <p>Finally, the html file points to app.js which creates the worker. The worker then loads in the worke.js automatically.</p>
 
     </section>
     <a href="../index.html">Back to Home</a>

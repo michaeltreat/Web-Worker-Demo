@@ -15,7 +15,7 @@
         <button id="color-button" style="color:blue">Try to change my color!</button>
       </div>
 
-      <p>Notice how the color wouldn't change until the final console log showed up? This is because the while loop is counting down from 1,000,000,000 1 number at a time. While it's counting down, it is 'Blocking' any other actions from being executed until the loop is finished. </p>
+      <p>Notice how the color didn't change until the final console log showed up? This is because the while loop is counting down, and while it's counting it's 'blocking' any other actions from being executed until the loop is finished. </p>
         
       <p>This is called 'blocking the stack'. We can use Web Workers to allow us to run that 'Blocking' code on another thread, which will allow color chaning button to function properly.</p>
       
