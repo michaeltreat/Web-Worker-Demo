@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Photo Upload</title>
+    
+  </head>
+  <body>
+    <main>
+      <h2>Using Web Workers</h2>
+
+      <p>In this example, we have the exact same setup, only this time the code that handles counting down from 1,000,000,000 is inside of a Web Worker.</p>
+
+      <button id="begin">Begin</button>
+      <button id="color-button" style="color:blue">Click here to change my color!</button>
+
+      <p>Notice that here you can change the color of the button at the same time that the while loop is running it's code? This is because the Web Worker is running the While loop on a different thread which basically free's up our main page's thread, and allows the color changing event listener to run!</p>
+    </main>
+
+    <section>
+      <h3>Setting up Web Workers</h3>
+
+      <p>Setting up Web Workers is fairly easy! Just call it's constructor and pass in the js file that you want it to run! Here are the two js files.</p>
+
+      <p>The app.js file just creates a new Worker() and passes in the name of the js file that it should run:</p>
+      
+      <pre>
+        new Worker('worker.js')
+      </pre>
+      
+      <p>And worker.js just counts down from 1 billion and console logs once every million numbers. Then it logs the ending message:</p>
+      <pre>
+        let counter = 1000000001
+          while( counter-- ) {
+            if( counter % 100000000 === 0 ) console.log( `While loop is Currently at : ${counter}` ) 
+          }
+          console.log( '---------- While Loop has Ended! ------------' )
+      </pre>
+    
+      <p>Also note that when the html file loads, it only runs app.js. The Web Worker will find the file that it's given, and load it up automatically.(There is also a button.js which just handles the functionality for the buttons.)</p>
+
+
+      <p>One thing to note about Web Workers: They don't have access to the DOM or the window object! But they can pass what are called Messages back and forth between themselves and the code that created them. In our example, app.js created the Web Worker, so if we wanted to tell our code something we could send it a message with postMessage. Click <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage">here</a>for more info on post message, and more advanced topics on Web Workers.</p>
+    </section>
+    
+    <script src="../scripts/buttons.js"></script>
+    <script src="../scripts/app.js"></script>
+  </body>
+</html>

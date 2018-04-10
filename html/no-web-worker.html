@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Web Workers</title>
+  
+  </head>
+  <body>
+    <main>
+      <h2>Code without Web Workers.</h2>
+      
+      <p>Demo: Open the console and when you're ready then click the Begin button to refresh the page and start the demo. Once the console logs start showing up, try to click the color-change button!</p>
+      
+      <button id="begin">Begin</button>
+      <button id="color-button" style="color:blue">Click here to change my color!</button>
+
+      <p>Notice how the color wouldn't change until the final console log showed up? This is because the while loop is counting down from 1,000,000,000 1 number at a time. While it's counting down, it is 'Blocking' any other actions from being executed until the loop is finished. This is called "blocking the stack". We can use Web Workers to allow us to run that 'Blocking' code on another thread, which will allow color chaning button to function properly.</p>
+      
+      <a href="./web-worker.html">Click here to see how the same code runs using a Web Worker.</a>
+    </main>
+
+    <script src="../scripts/buttons.js"></script>
+    <script src="../scripts/worker.js"></script>
+  </body>
+</html>
