@@ -7,10 +7,14 @@ document.getElementById('begin').addEventListener('click', e => location.reload(
 
 colorButton.addEventListener('click', () => {
   console.log('Changing color!')
-  if(colorButton.style.cssText === 'color: red;'){
-    colorButton.style.cssText = 'color: blue;'
-  }else{
-    colorButton.style.cssText = 'color: red;'
-  }
+  
+  let style = colorButton.style.cssText;
+  (style === 'color: red;') ? 'color: blue;' : 'color: red;'
+  
+//   if(colorButton.style.cssText === 'color: red;'){
+//     colorButton.style.cssText = 'color: blue;'
+//   }else{
+//     colorButton.style.cssText = 'color: red;'
+//   }
 })
 
