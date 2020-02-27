@@ -1,11 +1,2 @@
 'use strict'
-
-new Worker('../scripts/worker.js')
-
-
-
-
-
-
-
-
+new Worker('../scripts/worker.js');
