@@ -23,15 +23,9 @@
     <section>
       <h3>Setting up Web Workers</h3>
 
-      <p>Setting up Web Workers is fairly easy, just call it's constructor and pass in the js file that you want it to run! Here are the two .js files that we used in this demo:</p>
+      <p>Setting up Web Workers is fairly easy, just call it's constructor and pass in the .js file that you want it to run! Here are the two .js files that we used in this demo:</p>
 
-      <p>The "app.js" file creates a new Worker() and passes in the name of the js file that it should run:</p>
-      
-      <pre>
-        new Worker('worker.js')
-      </pre>
-      
-      <p>And "worker.js" just counts down from 1 billion and console logs once every million numbers. Then it logs the ending message:</p>
+      <p>"counter.js" just counts down from 1 billion and console logs once every million numbers. Then it logs the ending message:</p>
       <pre>
         let counter = 1000000001
         
@@ -43,8 +37,16 @@
 
         console.log( '--------- While Loop has Ended! ---------' )
       </pre>
+      
+      <p>While the "app.js" file just creates a new Worker() and passes in the "counter.js" file:</p>
+      
+      <pre>
+        new Worker('counter.js')
+      </pre>
+      
+      
     
-      <p>Finally, the html file points to app.js which creates the worker. The worker then loads in the worker.js automatically.</p>
+      <p>Finally, the html file points to app.js which creates the Web Worker. The Web Worker then loads in "counter.js" where it will run on a Web Worker thread.</p>
 
     </section>
     <a href="../index.html">Back to Home</a>
